@@ -361,10 +361,8 @@ section.services p{
     font-weight: 500;
 }
 /* *****************TESTIMONIALS********************** */
-section.testimonials{
-    background-color: #cde; 
-    border: 3px solid #fff;
-    /* margin: 0 0 3em; */
+section.testimonials{ 
+    height: 96vh;
 }
 section.testimonials h1{
     background-color: sandybrown;
@@ -381,7 +379,10 @@ section.testimonials h1{
     text-align: center;
 }
 .testimonials .voices{
-    margin: 2em;
+    margin: 2em 0 5em;
+    display: flex;
+    padding: 0 15em;
+    justify-content: space-around;
 } 
 .testimonials .speech-card{
     width: 250px;
@@ -393,6 +394,7 @@ section.testimonials h1{
     flex-direction: column;
     justify-content: space-between; 
     border-radius: 3px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.55);
 }
 div.profile-pic{
     display: flex;
@@ -409,15 +411,24 @@ div.profile-pic{
 .speech-card p:last-of-type{
     text-align: center;
 }
-
-
-section.go{
-    width: 100%;
-    height: 55vh; 
-    background: var(--lighgreenpigment) url(../images/pex-parallax.jpg) no-repeat center;
+/* --------------------PARRALLAX ZONE------------------ */
+section.parallax{
+    height: 55vh;
+    background: #ddd url(./images/parallax.jpg) no-repeat center;
+    background-attachment: fixed;
     background-size: cover; 
 }
-div.go{
+.parallax div.stats{
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+/* ---------------------CONTACT ZONE-------------------- */
+section.contact{
+    height: 70vh;
+    background: #cdb;
+}
+ 
+div.stats{
     background-color: rgba(2, 165, 134, .45); 
     width: 100%;
     height: 100%;
@@ -426,37 +437,40 @@ div.go{
     justify-content: center; 
     padding: 0 2em;
 }
-div.go div{ 
+div.stats div{ 
     text-align: center;
-    color: var(--navyblupigment);
+    color: rgb(239, 241, 146);
 }
-.go .blu h1{
+.stats .blu h1{
     font-size: 1rem;
     padding-bottom: .45em;
 }
 .blu span{
     color: var(--goldyellpigment);
 }
-.go .numbers{
+.stats .numbers{
     display: flex;
     justify-content: space-between;
-    border-top: 3px solid var(--navyblupigment);
+    border-top: 3px solid #e5ff00;
     padding: 0 .67em;
 }
-.go .numbers h1{
+.stats .numbers h1{
     font-size: 1.5rem;
 }
-.go .numbers h1::after{
-    content: "UNITS";
+.stats .numbers h1::after{
+    content: "WEBSITES";
     font-size: .67rem;
     display: block;
     color: var(--goldyellpigment);
 }
-.go .numbers h1:nth-of-type(2)::after{
-    content: "ALUMNI"; 
+.stats .numbers h1:nth-of-type(2)::after{
+    content: "SATISFIED CLIENTS"; 
 } 
-.go .numbers h1:nth-of-type(3)::after{
-    content: "COUNTRIES"; 
+.stats .numbers h1:nth-of-type(3)::after{
+    content: "PROJECTS"; 
+}  
+.stats .numbers h1:nth-of-type(4)::after{
+    content: "GUARANTEES"; 
 }  
  
 footer{ 
@@ -741,64 +755,7 @@ footer .medialinks{
     footer .footer-logo img{
         width: 9em;
     }
-}
-
-/* ############## MEMBERSHIP MEDIA RULESETS ############## */
- 
-
-article.alumni-association{
-    padding: 2em 0; 
-    text-align: justify;
-}
-article.alumni-association p{
-    margin-bottom: .4em;
-}
-article.alumni-association h3{
-    margin-top: 2em;
-    background-color: var(--navyblupigment);
-    border-radius: 5px;
-    padding: .3em 1em;
-    color: #fff;
-}
-article.alumni-association h1{
-    font-size: 1.15rem;
-    text-align: center;
-}
-article.alumni-association ul{ 
-    border: 4px inset var(--goldrodpigment);
-    color: var(--navyblupigment);
-    color: #34252F;
-    border-radius: 7px;
-    padding: .2em 0;
-    margin: 1em 0;
-    font-weight: 550;
-    text-align: left;
-}
-article.alumni-association ul li{
-    margin: .7em 0;
-    padding: .2em 1em;
-    list-style-position: inside;
-}
-aside.alumni-services h3{
-    margin: 1.5em 0 .5em;
-}
-aside.alumni-services ul{
-    border-top: 3px solid var(--transblupigment);
-    margin: 1em 0 4em;
-}
-aside.alumni-services ul li{
-    list-style-position: inside;
-    list-style: none; 
-    background-color: #EAEAEA; 
-    border-bottom: 1px solid var(--transblupigment);
-    padding: 1em;
-    display: flex;
-    justify-content: space-between;
-    align-items: center; 
-    cursor: pointer;
-}  
-
-
+} 
 /* ''''''''''''''MEMBERSHIP DESKTOP MEDIA RULESETS'''''''''' */
 @media screen and (min-width:1024px){
     section.container.membership{
@@ -814,286 +771,6 @@ aside.alumni-services ul li{
     }
 }
 
-/* ''''''''''''LIFE AT DCC MEDIA QUERIES''''''''''' */
-section.dcc-life{
-    color: #1F2232; 
-}
-section.dcc-life > h1{
-    font-size: 1.1rem;
-    margin: 2em 0 1em;
-    color: #D1603D;
-    padding: .5em 1em;
-    border-radius: 5px;
-    box-shadow: 2px 4px 10px var(--navyblupigment);
-    text-align: justify;
-}
-section.dcc-life .minds h3{
-    margin: 1.5em 0 .2em;
-}
-.dcc-minds img{
-    width: 100%;
-}
-.responses h2{
-    margin: 1em 0 .2em;
-}
-div.quotes{
-    border-top: 2px solid var(--lighgreenpigment);
-    border-bottom: 2px solid var(--lighgreenpigment);
-    font-size: 1.25rem;
-    line-height: 1.5;
-    text-align: justify;
-    color: var(--navyblupigment);
-    margin: 1em 0;
-    padding: .2em 0;
-}
-div.responses p{
-    margin: .9em 0;
-}
-div.responses > p > span{
-    font-weight: bold;
-}
-/* ''''''''''''EVENTS AT DCC MEDIA QUERIES''''''''''''''' */
-section.dcc-events h1{
-    font-size: 1.1rem;
-    margin-top: 2em;
-} 
-div.events-calendar{
-    margin: 2em 0;
-    border-top: 2px solid var(--purpigment);
-    border-bottom: 2px solid var(--purpigment);
-    padding: 1em 0;
-    overflow: hidden;
-}
-div.events-calendar h3{
-    margin: 1em 0 .2em;
-    font-size: 1rem;
-}
-div.events-calendar p{
-    padding-bottom: 1em;
-}
-a.callout-btn{
-   display: inline-block;
-   margin-top: 1em;
-   width: 45%;
-   text-decoration: none;
-   color: #fff;
-   background-color: var(--purpigment);
-   text-align: center;
-   padding: .5em 1em;
-   font-size: smaller;
-   border-radius: 15px;
-}
-a.callout-btn:last-of-type{
-    float: right;
-}
-div.events-calendar ~ h3{
-    font-size: 1rem;
-    margin-bottom: .2em;
-    text-align: center;
-}
-div.events-calendar ~ p{
-    padding-bottom: 1.5em;
-}
-section.dcc-events div.wellbeing{
-    margin: 1.5em 0 3em;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
-    grid-gap: 1em;
-    padding: 0 2em;
-}
-div.wellbeing .cards{
-    background-color: var(--lightpurpigment);
-    text-align: center;
-    color: #fff;
-    padding: 2em; 
-    border: 7px solid #E9EDDE;
-    border-style: double;
-    border-radius: 15px;
-}
-div.wellbeing .cards:nth-of-type(2){
-    background-color: #FF6663;
-}
-div.wellbeing .cards:nth-of-type(3){
-    background-color: #0B3954;
-}
-div.wellbeing .cards:nth-of-type(4){
-    background-color: #1B998B;
-}
-div.wellbeing .cards:nth-of-type(5){
-    background-color: #FF7F11;
-}
-div.wellbeing .cards:nth-of-type(6){
-    background-color: #41292C;
-} 
-div.wellbeing .cards h4{
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: #fff;
-}
-div.wellbeing .cards p{
-    text-align: center;
-    font-size: .9rem;
-}
-div.wellbeing .cards img{
-    margin: 2em 0; 
-    width: 50%;
-} 
-section.dcc-events h5{
-    font-size: 1rem;
-    margin: 1em 0;
-    color: #393E41; 
-}
-/* '''''''''''MEET DCC MEDIA QUERIES''''''''''''''' */ 
-.dcc-meet .meet-up{
-    overflow: hidden;
-} 
-section.dcc-meet .meet-up img{ 
-    width: 117%; 
-} 
-section.dcc-meet h1.container{
-    width: 100%;
-    margin: 1.1em 0 .5em;
-    padding: 0 .5em;
-    font-size: 1.5rem;
-    border-bottom: 3px solid var(--goldyellpigment);  
-}
-section.dcc-meet p.container{
-    margin: 1.5em auto;
-}
-section.dcc-meet div.container{
-    display: flex;
-    justify-content: space-between;
-    padding: 1em 0;
-    margin-bottom: 3em ;
-}
-section.dcc-meet a.connect-btn{ 
-    width: 49.6%;
-    background-color: var(--goldyellpigment);
-    color: #fff;
-    text-decoration: none; 
-    text-align: center;
-    padding: .5em .2em .9em; 
-    border-radius: 25px; 
-    border-top-right-radius: unset;
-    border-bottom-right-radius: unset;
-    font-weight: bold;
+ 
 
-} 
-section.dcc-meet a.connect-btn:last-of-type{
-    background-color: #1F5673;
-    border-radius: 25px;  
-    border-top-left-radius: unset;
-    border-bottom-left-radius: unset; 
-} 
-p.container.platform{   
-    padding: 0 0 1em;
-}  
-div.container.platform a{
-    background-color: #1F5673; 
-    padding: .5em 1em;
-    width: 49.6%;
-    color: #fff;
-    text-decoration: none; 
-    text-align: center;
-    padding: .7em .9em .9em; 
-    border-radius: 50px; 
-    border-top-right-radius: unset;
-    border-bottom-right-radius: unset;
-    font-weight: bold;  
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    /* margin-bottom: 4em; */
-}
-div.container.platform a:last-of-type{
-    background-color: var(--goldyellpigment);
-    border-radius: 50px;
-    border-top-left-radius: unset;
-    border-bottom-left-radius: unset;
-    flex-direction: row-reverse;
-}
-.fa-whatsapp{
-    color: var(--lighgreenpigment);
-    font-size: 2em;   
-}
-section.dcc-meet .shade{
-    height: 45vh;
-    background: #587B7F url(../images/hand-on.jpg) center no-repeat; 
-    margin-bottom: 4em;
-}
-section.dcc-meet .connect{
-    background-color: rgba(0, 0, 0, 0.75); 
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-} 
-section.dcc-meet .connect h1{
-    color: #fff;
-    font-size: 2rem; 
-    letter-spacing: var(--hdisting); 
-    margin-bottom: .3em;
-    padding: .3em;
-    border: 4px double var(--lighgreenpigment);
-    background-color: rgba(2, 165, 134, .75);
-}
-
-/* '''''''''INNER LINK PAGES RULESETS''''''''''''' */
-section.alumnus_story{
-
-}
-section.alumnus_story h1{
-    margin: 1.5em 0 1em;
-    padding-left: 14px;
-    border-top: 2px solid var(--purpigment);
-}
-section.alumnus_story h3{
-    margin-bottom: 1em;
-    border-bottom: 2px solid var(--purpigment);
-    padding-left: 14px; 
-    color: rgb(148, 117, 167);
-}
-section.alumnus_story img{
-    width: 100%;
-}
-section.alumnus_story p{
-    margin: 1em auto;
-    padding-left: .3em;
-}
-section .storyline{
-    border-left: 4px solid var(--lightpurpigment);
-}
-section .storyline::before{
-    content: "May 2020 - Checkout her storyline";
-    width: 100%;
-    height: 35px;
-    background-color: var(--lightpurpigment);
-    display: block;
-    color: #fff;
-    line-height: 2;
-    padding-left: .35em;
-    font-weight: bold;
-}
-section.alumnus_story .carstand{ 
-    margin: 2em 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
-    grid-gap: 1em;
-    padding: 0 .5em;
-    
-} 
-.carstand .gallery{
-    border-radius: 5px;
-    overflow: hidden;
-    box-shadow:  0px 5px 5px rgba(0, 0, 0, 0.55);
-}
-.carstand img{
-    width: 100%;
-    /* object-fit: fill; */
-}
-.carstand .gallery > p{
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    font-weight: bold;
-}
+ 
