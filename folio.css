@@ -161,18 +161,17 @@ section.skills{
 }
 section.skills .card{
     position: relative;
-    width: 180px;
+    width: 165px;
     background: linear-gradient(0deg, #1b1b1b, #222, #1b1b1b);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 280px;
+    height: 220px;
     border-radius: 4px;
     text-align: center;
     overflow: hidden;
     transition: .5s;
-    margin: 1em 0;
-
+    margin: 1em 0; 
 }
 section.skills .card:hover{
     transform: translateY(-10px);
@@ -362,13 +361,14 @@ section.services p{
 }
 /* *****************TESTIMONIALS********************** */
 section.testimonials{ 
-    height: 96vh;
+    /* height: 96vh; */
 }
 section.testimonials h1{
     background-color: sandybrown;
     color: #fff; 
     padding: .2em 0; 
     margin: 0 0 1em;
+    font-size: 1.25rem;
 } 
 .testimonials h1 span{
     margin-right: 2em;
@@ -381,7 +381,7 @@ section.testimonials h1{
 .testimonials .voices{
     margin: 2em 0 5em;
     display: flex;
-    padding: 0 15em;
+    flex-wrap: wrap;
     justify-content: space-around;
 } 
 .testimonials .speech-card{
@@ -395,6 +395,7 @@ section.testimonials h1{
     justify-content: space-between; 
     border-radius: 3px;
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.55);
+    margin-bottom: 2em;
 }
 div.profile-pic{
     display: flex;
@@ -527,7 +528,7 @@ footer .medialinks{
     grid-area: media;
     display: flex;
     justify-content: space-between;
-    padding-left: 7em;
+    /* padding-left: 7em; */
 }
 
 .fa-facebook-f{
@@ -576,7 +577,10 @@ footer .medialinks{
         height: 55%; 
         margin-top: 1.3em;
     }
-    /* >>>>>>>>>>>Styling Nav<<<<<<<<<<<<<<<< */ 
+    section.testimonials h1{ 
+        font-size: 2rem;
+    } 
+    /* >>>>>>>>>>>Styling DESKTOP Nav<<<<<<<<<<<<<<<< */ 
      
     nav ul{ 
         position: unset; 
@@ -634,31 +638,7 @@ footer .medialinks{
     .show-desktop{
         display: flex;
         opacity: 1;
-    }
-    section.go{ 
-        background: var(--lighgreenpigment) url(../images//adventure-parallax.jpg) no-repeat center;
-        background-size: cover;
-        background-attachment: fixed;
-    }
-
-    aside.mission{ 
-        display: grid;
-        grid-template-columns:  1fr 50%; 
-        align-items: center;
-    }
-    .mission p{
-        padding-right: 1.1em; 
-    } 
-       /* Parallax Go Zone */
-       div.go{ 
-        padding: 0 4em;
-    } 
-    .go .blu h1{
-        font-size: 2rem;
-    } 
-    .go .numbers h1{
-        font-size: 3rem;
-    }
+    }  
     footer .footer-logo img{
         width: 7em;
     }
@@ -706,16 +686,134 @@ footer .medialinks{
         width: 18.5%;
         margin: 0 auto .5em;  
     } 
+ section.skills{
+    min-height: 50vh; 
+    padding: 0 10em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    /* background: #101010; */
+    position: relative;
 
-    /* Parallax Go Zone */
-     
-    .go .blu h1{
-        font-size: 2.5rem;
-    } 
-    .go .numbers h1{
-        font-size: 4.5rem;
-    }
 }
+section.skills .card{ 
+    width: 200px; 
+    height: 250px;
+    border-radius: 4px;  
+    transition: .5s;
+    margin: 1em 2em; 
+}
+section.skills .card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.55);
+}
+section.skills .card::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    pointer-events: none;
+    z-index: 1;
+}
+.percent{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 50px #000;
+    background: #222;
+    z-index: 1000;
+}
+.percent .number{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.percent .number h2{
+    color: #777;
+    font-weight: 700;
+    font-size: 40px;
+    transition: .5s;
+}
+.card:hover .percent .number h2{
+    color: #fff;
+    font-size: 60px;
+}
+.percent .number h2 span{
+    font-size: 24px;
+    transition: .5s;
+    color: #777;
+}
+.card:hover .percent .number h2 span{ 
+    color: #fff;
+}
+.text{
+    position: relative;
+    margin-top: 25px;
+    color: #777;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: .5s;
+}
+.card:hover .text{
+    color: #fff;
+}
+
+svg{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    z-index: 1000;
+}
+svg circle{
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: #191919;
+    stroke-width: 10;
+    stroke-linecap: round;
+    transform: translate(5px, 5px);
+}
+svg circle:nth-child(2){
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+} 
+.card:nth-child(1) svg circle:nth-child(2){
+    stroke-dashoffset: calc(440 - (0.9 * 440));
+    stroke: #00ff43;
+}
+.card:nth-child(2) svg circle:nth-child(2){
+    stroke-dashoffset: calc(440 - (0.85 * 440));
+    stroke: #00a1ff;
+}
+.card:nth-child(3) svg circle:nth-child(2){
+    stroke-dashoffset: calc(440 - (0.6 * 440));
+    stroke: #ff04f7;
+}
+.card:nth-child(4) svg circle:nth-child(2){
+    stroke-dashoffset: calc(440 - (0.77 * 440));
+    stroke: #F7CB15;
+} 
+.card:nth-child(5) svg circle:nth-child(2){
+    stroke-dashoffset: calc(440 - (0.89 * 440));
+    stroke: #f0071a;
+} 
+.card:nth-child(6) svg circle:nth-child(2){
+    stroke-dashoffset: calc(440 - (0.72 * 440));
+    stroke: #8206d4;
+} 
+} 
 @media screen and (min-width:1024px){ 
     
     .nametag{ 
@@ -724,6 +822,12 @@ footer .medialinks{
     .fa-angle-double-up{
         font-size: 1.5rem;
     }
+    .testimonials .voices{
+        margin: 2em 0 5em;
+        display: flex;
+        padding: 0 15em;
+        justify-content: space-around;
+    } 
 }
 @media screen and (min-width:1200px){
     .mother{
@@ -739,38 +843,7 @@ footer .medialinks{
         padding: 1.7em 0 1.7em;   
     }  
 
-    /* Parallax Go Zone */
-    div.go{ 
-        padding: 0 12em;
-    } 
-    .go .blu h1{
-        font-size: 2.5rem;
-    } 
-    .go .numbers h1{
-        font-size: 4.5rem;
-    }
-    .go .numbers h1::after{ 
-        font-size: 1.5rem; 
-    }
-    footer .footer-logo img{
-        width: 9em;
-    }
-} 
-/* ''''''''''''''MEMBERSHIP DESKTOP MEDIA RULESETS'''''''''' */
-@media screen and (min-width:1024px){
-    section.container.membership{
-        display: flex;
-        justify-content: space-between; 
-    }
-    article.alumni-association{
-        width: 70%; 
-    }
-    
-    aside.alumni-services{
-        width: 27%;
-    }
-}
-
+     
  
 
  
