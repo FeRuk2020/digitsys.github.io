@@ -126,7 +126,9 @@ nav ul li a{
     background: #ccc url(./images/hero-img.jpg) no-repeat center;
     background-size: cover;  
     width: 100%;
-    height: 65vh;
+    height: 90vh;
+    transform: skewY(-7deg);
+    margin-top: -1.5em;
 }
 .hero .intro{
     height: 100%;
@@ -140,6 +142,9 @@ nav ul li a{
 .intro h1 span{
     color: #5FB0B7;
 }
+.intro h1, .intro h5, .intro small{
+    transform: skewY(7deg);
+} 
 @keyframes drop{
     from{
         transform: translateY(500px);
@@ -483,17 +488,25 @@ div.stats div{
  
 /* ---------------------CONTACT INFO ZONE-------------------- */
 section.contact{
-    /* height: 80vh;  */
+    height: 70vh; 
     background: #cdb;
 }
 section.contact h1{
     color: #555; 
 }
 .cognito{
-    text-align: center;
-    border-radius: 10px;
+    margin: 0 auto;
 }
-
+div.location{
+    display: flex;
+    height: 75vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+section.direction .map img{
+    width: 100%;
+}
 
 footer{ 
     border-top: 5px solid var(--goldyellpigment); 
@@ -613,9 +626,27 @@ footer .medialinks{
         height: 55%; 
         margin-top: 1.3em;
     }
+    .hero{
+        background: #ccc url(./images/hero-img.jpg) no-repeat center;
+        background-size: cover;  
+        width: 100%;
+        height: 90vh;
+        transform: skewY(-3deg);
+        margin-top: -2.5em;
+    }
+    .intro h1, .intro h5, .intro small{
+        transform: skewY(3deg);
+    } 
     section.testimonials h1{ 
         font-size: 2rem;
     } 
+
+    div.location{ 
+        height: auto;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-around;
+    }
     /* >>>>>>>>>>>Styling DESKTOP Nav<<<<<<<<<<<<<<<< */ 
      
     nav ul{ 
