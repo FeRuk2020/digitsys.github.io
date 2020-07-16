@@ -8,6 +8,18 @@
     margin: 0; 
     box-sizing: border-box;
 } 
+
+.headed{
+    margin: 0 auto;
+    text-align: center;
+    border-top: 3px solid #bbb;
+    border-bottom: 3px solid #bbb;
+    letter-spacing: 4px;
+    width: 55%;
+}
+.padded{
+    padding: 3em 0;
+}
   
  
 .container{
@@ -40,7 +52,7 @@ header .logo{
     height: 30px; 
     margin-top: .95em;
 }
-/* >>>>>>>>>>>Styling Mobile Vertical Menu<<<<<<<<<<<<<<<< */ 
+/* >>>>>>>>>>>MOBILE VERTICAL Menu<<<<<<<<<<<<<<<< */ 
 
 nav ul{ 
     position: fixed;  
@@ -141,14 +153,16 @@ nav ul li a{
 .hero .intro h1{
     color: #fff;
     font-weight: 750;  
-    /* animation: drop 5s forwards ;  */
-
+    /* animation: drop 5s forwards ;  */ 
 } 
 
 .hide-mobile{
     display: none;
 } 
 /* ***************SHOWCASE ------------------ SKILLS************/
+div.skillset{
+    margin: 3em 0;
+}
 section.skills{
     min-height: 50vh; 
     display: flex;
@@ -303,8 +317,7 @@ section.services{
 .service-heading img{
     height: 100%;
 }
-section.services h1{ 
-    font-size: 2rem;
+section.services h1{  
     border-top: 3px solid #fff;
     border-bottom: 3px solid #fff;
     letter-spacing: 4px;
@@ -422,13 +435,7 @@ section.parallax{
 .parallax div.stats{
     height: 100%;
     background-color: rgba(0, 0, 0, 0.25);
-}
-/* ---------------------CONTACT ZONE-------------------- */
-section.contact{
-    height: 70vh;
-    background: #cdb;
-}
- 
+} 
 div.stats{
     background-color: rgba(2, 165, 134, .45); 
     width: 100%;
@@ -474,6 +481,16 @@ div.stats div{
     content: "GUARANTEES"; 
 }  
  
+/* ---------------------CONTACT INFO ZONE-------------------- */
+section.contact{
+    /* height: 80vh;  */
+    background: #cdb;
+}
+section.contact h1{
+    color: #555; 
+}
+
+
 footer{ 
     border-top: 5px solid var(--goldyellpigment); 
     background-color: #002950;
@@ -545,6 +562,21 @@ footer .medialinks{
 .fa-twitter{
     color: var(--transblupigment);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* >>>>>>>>>>> MEDIA QUERIES BEGINS....<<<<<<<<<<<<< */
 
@@ -816,6 +848,12 @@ svg circle:nth-child(2){
 } 
 @media screen and (min-width:1024px){ 
     
+    h1{
+        font-size: 2rem; 
+    }
+    .headed{ 
+        width: 20%;
+    }
     .nametag{ 
         height: 60%;  
     }
