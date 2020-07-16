@@ -489,6 +489,10 @@ section.contact{
 section.contact h1{
     color: #555; 
 }
+.cognito{
+    text-align: center;
+    border-radius: 10px;
+}
 
 
 footer{ 
